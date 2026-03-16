@@ -162,7 +162,7 @@ El proceso interno del sistema sigue las siguientes etapas:
 
 # 📂 Estructura del proyecto
 
-
+```
 traductor_azure
 │
 ├── assets/
@@ -192,7 +192,7 @@ traductor_azure
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-
+```
 
 ---
 
@@ -331,12 +331,12 @@ Las claves de Azure no deben almacenarse directamente en el repositorio.
 
 Se recomienda utilizar variables de entorno.
 
-
+```
 AZURE_SPEECH_KEY
 AZURE_SPEECH_REGION
 AZURE_TRANSLATOR_KEY
 AZURE_TRANSLATOR_REGION
-
+```
 
 ---
 
@@ -344,8 +344,8 @@ AZURE_TRANSLATOR_REGION
 
 El repositorio incluye documentación adicional:
 
-Manual técnico del sistema  
-Manual de usuario
+Manual técnico del sistema(https://docs.google.com/document/d/1eeRgAkRW4Ri2wKqOIiRjO0gnj73C_nZt/edit)  
+Manual de usuario(https://docs.google.com/document/d/1s3w4PvfknODNDu3h8kxtNhJcEFrDR7Pr/edit)
 
 ---
 
