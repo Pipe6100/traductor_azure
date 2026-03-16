@@ -1,298 +1,373 @@
-🎙️ NexoVoz – Traductor de Voz en Tiempo Real con Azure
+# 🎙️ NexoVoz – Traductor de Voz en Tiempo Real con Azure
 
-Sistema de traducción simultánea que captura audio desde un micrófono, lo transcribe y lo traduce en tiempo real utilizando Microsoft Azure Cognitive Services.
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Azure](https://img.shields.io/badge/Azure-Cognitive%20Services-blue)
+![Speech SDK](https://img.shields.io/badge/Azure-Speech%20SDK-green)
+![Translator](https://img.shields.io/badge/Azure-Translator-orange)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-darkgreen)
 
-La aplicación permite generar subtítulos en vivo durante conferencias, clases, congresos o presentaciones multilingües.
+NexoVoz es una aplicación de **traducción simultánea en tiempo real** que captura audio desde un micrófono, lo transcribe mediante reconocimiento de voz y lo traduce automáticamente utilizando servicios de **Microsoft Azure Cognitive Services**.
 
-📌 Proyecto personal
+El sistema permite generar **subtítulos en vivo durante presentaciones, conferencias o clases**, facilitando la comunicación entre personas que hablan diferentes idiomas.
 
-Este repositorio corresponde a un proyecto personal de desarrollo de software enfocado en la integración de:
+---
 
-Procesamiento de lenguaje natural
+# 📌 Descripción del proyecto
 
-Reconocimiento de voz
+NexoVoz fue desarrollado como un proyecto académico enfocado en la integración de tecnologías de inteligencia artificial para el procesamiento del lenguaje.
 
-Traducción automática
+El sistema captura el audio del micrófono, lo procesa mediante servicios de reconocimiento de voz, genera una transcripción del discurso y posteriormente traduce el contenido al idioma seleccionado.
 
-APIs de inteligencia artificial en la nube
+El resultado se muestra en forma de **subtítulos en tiempo real**, lo que permite a los asistentes seguir el contenido de una presentación sin importar el idioma original.
 
-El sistema busca reducir la barrera idiomática en eventos académicos y presentaciones internacionales.
+---
 
-👨‍💻 Autores
+# 🎯 Objetivo del sistema
 
-Walter Danilo Noguera Quintero
-Ingeniería de Sistemas – Universidad de la Amazonia
+Desarrollar una herramienta de **traducción automática de discursos en tiempo real**, capaz de generar subtítulos multilingües durante presentaciones académicas, conferencias o eventos internacionales.
 
-Yeison Jhoan Cadena Córdoba
-Ingeniería de Sistemas – Universidad de la Amazonia
+El objetivo principal es **reducir la barrera idiomática en entornos educativos y profesionales**.
 
-Juan Felipe Loaiza Facundo
-Ingeniería de Sistemas – Universidad de la Amazonia
+---
 
-Docente orientador:
+# 👨‍💻 Autores
+
+Walter Danilo Noguera Quintero  
+Ingeniería de Sistemas – Universidad de la Amazonia  
+
+Yeison Jhoan Cadena Córdoba  
+Ingeniería de Sistemas – Universidad de la Amazonia  
+
+Juan Felipe Loaiza Facundo  
+Ingeniería de Sistemas – Universidad de la Amazonia  
+
+Docente orientador  
 Jesús Emilio Pinto Lopera
 
-🎯 Objetivo del sistema
+---
 
-Ofrecer una herramienta de traducción simultánea asistida por inteligencia artificial para eventos, presentaciones o clases, generando subtítulos en vivo con baja latencia.
+# 🌐 Tecnologías utilizadas
 
-🌐 Tecnologías utilizadas
+El sistema fue desarrollado utilizando las siguientes tecnologías:
 
-Este proyecto utiliza las siguientes tecnologías:
+- Python
+- Azure Cognitive Services
+- Azure Speech SDK
+- Azure Translator API
+- MongoDB
+- Procesamiento de audio en tiempo real
+- Interfaz gráfica en Python
 
-Python
+---
 
-Azure Cognitive Services
+# ☁️ Servicios de Azure utilizados
 
-Azure Speech SDK
+## Azure Speech Service
 
-Azure Translator
+Permite convertir audio en texto utilizando reconocimiento automático del habla.
 
-Procesamiento de audio
+## Azure Translator
 
-Interfaz gráfica en Python
+Permite traducir automáticamente el texto generado por el reconocimiento de voz.
 
-MongoDB (registro de datos)
+---
 
-☁️ APIs de Azure utilizadas
+# 🏗️ Arquitectura del sistema
 
-El sistema utiliza dos servicios principales de Microsoft Azure.
+El sistema sigue una arquitectura modular que separa las funciones de captura de audio, procesamiento del lenguaje y visualización de resultados.
 
+```
+Micrófono
+↓
+Captura de audio
+↓
+Procesamiento de señal
+↓
 Azure Speech Service
-
-Permite convertir audio a texto mediante reconocimiento de voz.
-
+↓
+Transcripción del discurso
+↓
 Azure Translator
-
-Permite traducir automáticamente el texto reconocido a otros idiomas.
-
-Flujo del sistema
-Audio → Transcripción → Traducción → Subtítulos
-
+↓
+Texto traducido
+↓
+Interfaz gráfica
+↓
+Subtítulos en vivo
 ```
-📂 Estructura del proyecto
-traductor_azure/
+
+Este flujo permite que la traducción aparezca en pantalla con una latencia mínima.
+
+---
+
+# 🔧 Componentes del sistema
+
+El sistema está compuesto por diferentes módulos que trabajan de forma integrada.
+
+### Captura de audio
+
+Encargado de obtener la señal de audio desde el micrófono del sistema.
+
+### Procesamiento de audio
+
+Aplica filtros para mejorar la calidad del sonido:
+
+- supresión de ruido
+- cancelación de eco
+- control automático de ganancia
+
+### Reconocimiento de voz
+
+Utiliza **Azure Speech Service** para convertir la señal de audio en texto.
+
+### Motor de traducción
+
+El texto generado se envía al servicio **Azure Translator** para su traducción automática.
+
+### Interfaz gráfica
+
+La interfaz muestra la transcripción original y la traducción generada en tiempo real mediante subtítulos.
+
+### Registro de datos
+
+Se utiliza **MongoDB** para almacenar registros del funcionamiento del sistema.
+
+---
+
+# 🔄 Flujo de funcionamiento
+
+El proceso interno del sistema sigue las siguientes etapas:
+
+1. Captura del audio desde el micrófono.
+2. Procesamiento de la señal de audio.
+3. Envío del audio al servicio Azure Speech.
+4. Conversión del discurso en texto.
+5. Envío del texto al servicio Azure Translator.
+6. Traducción automática al idioma seleccionado.
+7. Visualización de subtítulos en tiempo real.
+
+---
+
+# 🎥 Demostración del sistema
+
+## Interfaz principal
+
+![Interfaz](assets/Interfaz.png)
+
+## Subtítulos en vivo
+
+![Subtitulos](assets/Subtitulos.png)
+
+---
+
+# 📂 Estructura del proyecto
+
+
+traductor_azure
 │
-├── main.py
-├── azure_worker.py
-├── audio_config_ui.py
-├── config.py
-├── mongodb_service.py
-├── styles.py
-├── logger.py
-├── ui.py
+├── assets/
+│ ├── interfaz.png
+│ ├── subtitulos.png
+│ └── icono_traductor.png
 │
-├── nexovoz_config.json
+├── config/
+│ └── nexovoz_config.json
+│
+├── docs/
+│ ├── CONFIGURACION_AUDIO_OMNIDIRECCIONAL.md
+│ ├── FUNCIONALIDAD_MULTI_IDIOMA.md
+│ ├── Manual de Usuario.docx
+│ └── Manual_tecnico.docx
+│
+├── src/
+│ ├── main.py
+│ ├── azure_worker.py
+│ ├── audio_config_ui.py
+│ ├── config.py
+│ ├── mongodb_service.py
+│ ├── styles.py
+│ ├── logger.py
+│ └── ui.py
+│
 ├── requirements.txt
-│
-├── CONFIGURACION_AUDIO_OMNIDIRECCIONAL.md
-├── FUNCIONALIDAD_MULTI_IDIOMA.md
-│
-└── icono_traductor.png
-```
+├── README.md
+└── .gitignore
 
-⚙️ Requisitos
+
+---
+
+# ⚙️ Requisitos
 
 Para ejecutar la aplicación se requiere:
 
-PC con mínimo 4 GB de RAM
+- PC con mínimo **4 GB de RAM**
+- micrófono funcional
+- conexión a internet
+- cuenta activa en **Microsoft Azure**
+- servicios habilitados de Speech y Translator
 
-Micrófono
+---
 
-Conexión a internet
+# ⚙️ Instalación
 
-Cuenta activa en Microsoft Azure
+Clonar el repositorio
 
-API de Speech y Translator habilitadas
 
-⚙️ Instalación
-Clonar el repositorio: git clone https://github.com/Pipe6100/traductor_azure.git
+git clone https://github.com/Pipe6100/traductor_azure.git
+
 
 Entrar al proyecto
+
+
 cd traductor_azure
 
+
 Crear entorno virtual
+
+
 python -m venv venv
 
-Activar entorno
+
+Activar entorno virtual
+
 Windows
+
 
 venv\Scripts\activate
 
+
 Linux / Mac
+
+
 source venv/bin/activate
 
+
 Instalar dependencias
+
+
 pip install -r requirements.txt
 
-▶️ Ejecutar el proyecto
-python main.py
 
-```
-🎤 Funcionalidades
+---
+
+# ▶️ Ejecución del sistema
+
+
+python src/main.py
+
+
+---
+
+# 🎤 Funcionalidades principales
 
 El sistema permite:
 
-✔ Reconocimiento de voz en tiempo real
-✔ Traducción automática multilenguaje
-✔ Subtítulos en vivo
-✔ Configuración avanzada de audio
-✔ Supresión de ruido
-✔ Cancelación de eco
-✔ Control automático de ganancia
-✔ Ajuste de sensibilidad del micrófono
-```
+- reconocimiento de voz en tiempo real
+- traducción automática multilenguaje
+- generación de subtítulos en vivo
+- configuración avanzada de audio
+- supresión de ruido ambiental
+- cancelación de eco
+- control automático de ganancia
+- ajuste de sensibilidad del micrófono
 
-🎬 Casos de uso
+---
 
-Este sistema puede utilizarse en:
+# 🎬 Casos de uso
 
-Congresos académicos
+El sistema puede utilizarse en diferentes contextos como:
 
-Conferencias internacionales
+- congresos académicos
+- conferencias internacionales
+- clases bilingües
+- eventos multilingües
+- presentaciones con subtítulos en vivo
 
-Clases bilingües
+---
 
-Eventos multilingües
+# ⚡ Rendimiento
 
-Presentaciones con subtítulos en vivo
+El sistema fue diseñado para operar con baja latencia.
 
-🔐 Seguridad
+En condiciones normales la traducción aparece entre **1 y 3 segundos** después de que se pronuncia la frase.
 
-Se recomienda:
+Factores que influyen en el rendimiento:
 
-No subir al repositorio las API Keys de Azure Cognitive Services.
+- calidad del micrófono
+- estabilidad de la conexión a internet
+- latencia de los servicios de Azure
+- nivel de ruido ambiental
 
-Estas claves corresponden a los servicios utilizados por la aplicación:
+---
 
-Azure Speech Service (reconocimiento de voz)
+# 📊 Aplicaciones potenciales
 
-Azure Translator Service (traducción automática)
+La tecnología implementada puede aplicarse en diferentes contextos:
 
-Almacenar las credenciales mediante variables de entorno o archivos de configuración locales excluidos del control de versiones.
+- educación internacional
+- congresos científicos
+- turismo
+- comunicación empresarial
+- accesibilidad para personas con discapacidad auditiva
+- eventos multiculturales
 
-```
-Ejemplo de variables de entorno
+---
+
+# 📚 Área de investigación
+
+Este proyecto se relaciona con las siguientes áreas de estudio:
+
+- Inteligencia Artificial aplicada
+- Procesamiento de Lenguaje Natural
+- Reconocimiento automático del habla
+- Traducción automática neuronal
+- Sistemas de asistencia multilingüe
+
+---
+
+# 🔐 Seguridad
+
+Las claves de Azure no deben almacenarse directamente en el repositorio.
+
+Se recomienda utilizar variables de entorno.
+
+
 AZURE_SPEECH_KEY
 AZURE_SPEECH_REGION
 AZURE_TRANSLATOR_KEY
 AZURE_TRANSLATOR_REGION
-```
 
-📜 Licencia
 
-Proyecto académico y de demostración.
+---
 
 # 📄 Documentación
 
-Este repositorio incluye:
+El repositorio incluye documentación adicional:
 
-- 📘 [Manual Técnico](https://docs.google.com/document/d/1eeRgAkRW4Ri2wKqOIiRjO0gnj73C_nZt/edit?usp=drive_link&ouid=109601953445273230093&rtpof=true&sd=true)
-- 📗 [Manual de Usuario](https://docs.google.com/document/d/1s3w4PvfknODNDu3h8kxtNhJcEFrDR7Pr/edit?usp=drive_link&ouid=109601953445273230093&rtpof=true&sd=true)
+Manual técnico del sistema  
+Manual de usuario
 
-🧠 Arquitectura del sistema
+---
 
-El sistema sigue una arquitectura modular orientada a eventos, separando las responsabilidades de captura de audio, procesamiento de voz, traducción y visualización.
+# 🔧 Mejoras futuras
 
-```
-Flujo interno del sistema
+Entre las posibles mejoras del sistema se encuentran:
 
-Micrófono
-   ↓
-Captura de audio
-   ↓
-Azure Speech Service
-   ↓
-Transcripción a texto
-   ↓
-Azure Translator
-   ↓
-Texto traducido
-   ↓
-Interfaz gráfica
-   ↓
-Subtítulos en vivo
-```
+- traducción simultánea a múltiples idiomas
+- síntesis de voz para reproducir traducciones
+- exportación automática de transcripciones
+- soporte para múltiples micrófonos
+- integración con plataformas de videoconferencia
+- desarrollo de una versión web del sistema
 
-```
-Componentes principales
+---
 
-Captura de audio
-Obtiene el audio desde el micrófono.
+# ⭐ Reconocimientos
 
-Motor de reconocimiento
-Azure Speech convierte voz a texto.
+Este proyecto fue desarrollado como ejercicio académico dentro del programa de **Ingeniería de Sistemas de la Universidad de la Amazonia**, integrando conocimientos de desarrollo de software, inteligencia artificial y servicios en la nube.
 
-Motor de traducción
-Azure Translator traduce el texto detectado.
+---
 
-Interfaz gráfica
-Muestra los subtítulos en tiempo real.
+# 📜 Licencia
 
-Registro de datos
-MongoDB almacena información de uso.
-```
-
-⚡ Rendimiento
-
-El sistema está diseñado para operar con baja latencia, permitiendo que la traducción aparezca casi en tiempo real.
-
-Factores que influyen en el rendimiento
-
-Calidad del micrófono
-
-Velocidad de conexión a internet
-
-Latencia de los servicios de Azure
-
-Nivel de ruido en el entorno
-
-En condiciones normales, la traducción aparece entre 1 y 3 segundos después de la pronunciación.
-
-🔧 Posibles mejoras futuras
-
-El proyecto puede ampliarse con nuevas funcionalidades como:
-
-Traducción a más idiomas simultáneamente
-
-Síntesis de voz para reproducir la traducción
-
-Exportación automática de transcripciones
-
-Soporte para múltiples micrófonos
-
-Modo conferencia multicanal
-
-Interfaz web para uso remoto
-
-Integración con Zoom / Teams / Meet
-
-📊 Aplicaciones potenciales
-
-La tecnología implementada en este proyecto puede aplicarse en distintos contextos:
-
-Educación internacional
-
-Conferencias científicas
-
-Eventos empresariales
-
-Turismo
-
-Accesibilidad para personas con dificultades auditivas
-
-Comunicación intercultural en tiempo real
-
-⭐ Reconocimientos
-
-Este proyecto fue desarrollado como ejercicio académico y de investigación en el área de:
-
-Inteligencia Artificial aplicada
-
-Procesamiento de lenguaje natural
-
-Reconocimiento de voz
-
-Sistemas de traducción automática
-
-Utilizando los servicios de Microsoft Azure Cognitive Services.
+Proyecto académico y de demostración.
