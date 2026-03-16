@@ -344,8 +344,9 @@ AZURE_TRANSLATOR_REGION
 
 El repositorio incluye documentación adicional:
 
-Manual técnico del sistema(https://docs.google.com/document/d/1eeRgAkRW4Ri2wKqOIiRjO0gnj73C_nZt/edit)  
-Manual de usuario(https://docs.google.com/document/d/1s3w4PvfknODNDu3h8kxtNhJcEFrDR7Pr/edit)
+📘 [Manual técnico del sistema](https://docs.google.com/document/d/1eeRgAkRW4Ri2wKqOIiRjO0gnj73C_nZt/edit)
+
+📗 [Manual de usuario](https://docs.google.com/document/d/1s3w4PvfknODNDu3h8kxtNhJcEFrDR7Pr/edit)
 
 ---
 
