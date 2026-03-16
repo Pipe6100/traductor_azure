@@ -1,0 +1,33 @@
+{
+    "azure_speech_key": "CsDF058L2WuJ7VK0cJjpX1FPzVMOyS8NgF0YkvUp5YYpjYxEPY9uJQQJ99BHACYeBjFXJ3w3AAAYACOGxtgl",
+    "azure_speech_region": "eastus",
+    "audio_config": {
+        "sample_rate": 16000,
+        "chunk_size": 1024,
+        "channels": 1,
+        "enable_audio_processing": true,
+        "noise_suppression": "moderate",
+        "echo_cancellation": true,
+        "auto_gain_control": true,
+        "microphone_sensitivity": "high",
+        "audio_boost": true,
+        "enable_audio_logging": false,
+        "profanity_filter": "masked",
+        "segmentation_silence_timeout": 500,
+        "segmentation_max_time": 20000
+    },
+    "globe_config": {
+        "width_percentage": 1.0,
+        "min_width": 400,
+        "max_width": 1600,
+        "font_size": 60,
+        "min_font_size": 12,
+        "max_font_size": 60,
+        "font_family": "Segoe UI",
+        "font_weight": "Bold",
+        "padding": 35,
+        "line_spacing": 2.0,
+        "background_opacity": 100,
+        "border_opacity": 255
+    }
+}
